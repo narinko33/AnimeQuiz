@@ -10,18 +10,18 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-public class DAO {
+public abstract class DAO {
 	Connection con;
 	PreparedStatement stmt;
 	ResultSet rs;
 
-	private void connect() throws NamingException, SQLException {
+	protected void connect() throws NamingException, SQLException {
 		Context context = new InitialContext();
-		DataSource ds = (DataSource) context.lookup("java:comp/env/animeQuiz");
+		DataSource ds = (DataSource) context.lookup("java:comp/env/animequiz2");
 		this.con = ds.getConnection();
 	}
 
-	private void disconnect() {
+	protected void disconnect() {
 		try {
 			if (rs != null) {
 				rs.close();

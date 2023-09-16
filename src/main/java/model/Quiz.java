@@ -8,34 +8,34 @@ public class Quiz {
 	public Quiz() {
 	}
 
-	public Quiz(int id, String text, String answer) {
-		this.id = id;
+	public Quiz(String text, String answer) {
 		this.text = text;
 		this.answer = answer;
+
+	}
+
+	public Quiz(int id, String text, String answer) {
+		this(text, answer);
+		this.id = id;
+
 	}
 
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
+
 
 	public String getText() {
 		return text;
 	}
 
-	public void setText(String text) {
-		this.text = text;
-	}
+
 
 	public String getAnswer() {
 		return answer;
 	}
 
-	public void setAnswer(String answer) {
-		this.answer = answer;
-	}
+
 
 }
