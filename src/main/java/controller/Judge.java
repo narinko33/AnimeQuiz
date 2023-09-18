@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,6 +40,8 @@ public class Judge extends HttpServlet {
 		} else {
 			request.setAttribute("badMsg", "不正解！！");
 		}
+		RequestDispatcher dr = request.getRequestDispatcher("WEB-INF/view/game.jsp");
+		dr.forward(request, response);
 	}
 
 }

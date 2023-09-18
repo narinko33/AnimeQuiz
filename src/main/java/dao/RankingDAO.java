@@ -22,7 +22,7 @@ public class RankingDAO extends DAO {
 				//				レコードから各カラムのデータを取得
 				int id = rs.getInt("id");
 				String name = rs.getString("name");
-				String good = rs.getString("good");
+				int good = rs.getInt("good");
 				String updated = rs.getString("updated");
 
 				//				取得したデータでインスタンスを作成、リストに追加
@@ -45,7 +45,7 @@ public class RankingDAO extends DAO {
 
 			stmt = con.prepareStatement("INSERT INTO ranking(name, good, updated) VALUES(?,?,?)");
 			stmt.setString(1, ranking.getName());
-			stmt.setString(2, ranking.getGood());
+			stmt.setInt(2, ranking.getGood());
 			stmt.setString(3, ranking.getUpdated());
 			stmt.execute();
 
