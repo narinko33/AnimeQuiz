@@ -53,7 +53,7 @@ public class QuizDAO extends DAO {
 			this.disconnect();
 		}
 	}
-	//全件取得
+	//ランダムに10件取得
 		public List<Quiz> getRandom() {
 			List<Quiz> list = new ArrayList<Quiz>();
 			try {

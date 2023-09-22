@@ -33,13 +33,23 @@ public class Judge extends HttpServlet {
 		Integer quizNumber  = (Integer)session.getAttribute("quizNumber");
 		Ranking ranking = (Ranking)session.getAttribute("ranking");
 		
-		if(answer == quizList.get(quizNumber).getAnswer()) {
+		
+		if(answer.equals(quizList.get(quizNumber).getAnswer())) {
 			
 			request.setAttribute("goodMsg", "正解！！");
 			ranking.addGood();
 		} else {
 			request.setAttribute("badMsg", "不正解！！");
 		}
+		
+		quizNumber++;
+		session.setAttribute("quizNumber", quizNumber);
+		if(quizNumber == 10) {
+			RequestDispatcher dr = request.getRequestDispatcher("WEB-INF/view/result.jsp");
+			dr.forward(request, response);
+			
+		}
+		
 		RequestDispatcher dr = request.getRequestDispatcher("WEB-INF/view/game.jsp");
 		dr.forward(request, response);
 	}

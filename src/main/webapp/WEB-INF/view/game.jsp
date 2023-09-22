@@ -4,8 +4,8 @@
     <%
     List<Quiz> quizList = (List<Quiz>)session.getAttribute("quizList");
     Integer quizNumber  = (Integer)session.getAttribute("quizNumber");
-    String errorMsg = (String)request.getAttribute("badMsg");
-    String errorMsg = (String)request.getAttribute("goodMsg");
+    String badMsg = (String)request.getAttribute("badMsg");
+    String goodMsg = (String)request.getAttribute("goodMsg");
     %>
 <!DOCTYPE html>
 <html>
@@ -14,12 +14,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% if(badMsg == null || goodmsg != null ) { %>
+<% if(goodMsg != null ) { %>
 <p><font color="green"><%= goodMsg %></font></p>
-<% } else if(badMsg != null || goodmsg == null ) {%>
-<p><font color="red"><%= errMsg %></font></p>
-<% } else { %>
+<% } else if(badMsg != null) {%>
+<p><font color="red"><%= badMsg %></font></p>
+<% } else {%>
 <% } %>
+
 <h1>問題<%=quizNumber + 1 %></h1>
 <form action="Judge" method="post">
 <%=quizList.get(quizNumber).getText() %><br>
