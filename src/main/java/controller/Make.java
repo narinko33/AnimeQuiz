@@ -20,13 +20,11 @@ public class Make extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		QuizDAO dao = new QuizDAO();
-		dao.connectCheck();
 		List<Quiz> quizList = dao.findAll();
-		System.out.println(quizList.size());
 		request.setAttribute("quizList", quizList);
 		
 		
-		RequestDispatcher rd = request.getRequestDispatcher("make.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/make.jsp");
 		rd.forward(request, response);
 	}
 
@@ -47,7 +45,7 @@ public class Make extends HttpServlet {
 		List<Quiz>quizList = dao.findAll();
 		request.setAttribute("quizList", quizList);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("make.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/make.jsp");
 		rd.forward(request, response);
 	}
 

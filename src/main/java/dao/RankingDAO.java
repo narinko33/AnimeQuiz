@@ -15,7 +15,7 @@ public class RankingDAO extends DAO {
 		try {
 			this.connect();
 
-			stmt = con.prepareStatement("SELECT * FROM ranking");
+			stmt = con.prepareStatement("SELECT * FROM ranking ORDER BY good DESC");
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {

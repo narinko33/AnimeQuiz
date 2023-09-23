@@ -30,6 +30,7 @@
 <% for (Quiz quiz : quizList) { %>
 <tr><td><%= quiz.getText() %></td><td><%= quiz.getAnswer() %></td></tr>
 <% } %>
+<a href="index.jsp">戻る</a><br><br>
 </table>
 </body>
 </html>

@@ -11,9 +11,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-名前:<%=ranking.getName() %>
-遊んだ日:<%=ranking.getUpdated() %>
-正解数:<%=ranking.getGood() %>
-
+<h1>＜＜＜＜成績発表＞＞＞＞</h1>
+名前:<%=ranking.getName() %><br>
+遊んだ日:<%=ranking.getUpdated() %><br>
+正解数:<%=ranking.getGood() %><br>
+<a href="RankIn">戻る</a><br><br>
 </body>
 </html>

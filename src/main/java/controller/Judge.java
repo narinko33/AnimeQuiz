@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.RankingDAO;
 import model.Quiz;
 import model.Ranking;
 
@@ -45,6 +46,10 @@ public class Judge extends HttpServlet {
 		quizNumber++;
 		session.setAttribute("quizNumber", quizNumber);
 		if(quizNumber == 10) {
+			
+			RankingDAO dao = new RankingDAO();
+			dao.insertOne(ranking);
+			
 			RequestDispatcher dr = request.getRequestDispatcher("WEB-INF/view/result.jsp");
 			dr.forward(request, response);
 			

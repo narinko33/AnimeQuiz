@@ -4,16 +4,17 @@
     <head>
         <meta charset="UTF-8">
         <title>タイトル</title>
+        <link rel="stylesheet" href="css/index.css">
     </head>
 
     <body>
-        <h1>アニメ・マンガクイズ</h1>
+        <img  src="images/title.jpg" id="title">
         <form action="Play" method="post">
             名前：<input type="text" name="name">
             <input type="submit" value="遊ぶ"><br><br>
         </form>
-        <a href="ranking.jsp">ランキング</a><br><br>
-        <a href="make.jsp">問題作り</a><br><br>
+        <a href="Rank">ランキング</a><br><br>
+        <a href="Make">問題作り</a><br><br>
     </body>
 
     </html>
