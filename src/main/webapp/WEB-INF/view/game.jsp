@@ -20,12 +20,14 @@
 <p><font color="red"><%= badMsg %></font></p>
 <% } else {%>
 <% } %>
-
 <h1>問題<%=quizNumber + 1 %></h1>
 <form action="Judge" method="post">
 <%=quizList.get(quizNumber).getText() %><br>
-回答:<input type="text" name="answer"><br>
-<input type="submit" value="ファイナルアンサー">
+選択肢<br>
+<%=quizList.get(quizNumber).getSelect() %><br>
+回答:<button name="answer" value="1">1</button>
+<button name="answer" value="2">2</button>
+<button name="answer" value="3">3</button><br>
 </form>
 </body>
 </html>

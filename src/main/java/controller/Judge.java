@@ -45,6 +45,7 @@ public class Judge extends HttpServlet {
 		
 		quizNumber++;
 		session.setAttribute("quizNumber", quizNumber);
+		
 		if(quizNumber == 10) {
 			
 			RankingDAO dao = new RankingDAO();

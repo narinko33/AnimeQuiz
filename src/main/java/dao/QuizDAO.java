@@ -22,10 +22,11 @@ public class QuizDAO extends DAO {
 				//				レコードから各カラムのデータを取得
 				int id = rs.getInt("id");
 				String text = rs.getString("text");
+				String select = rs.getString("select");
 				String answer = rs.getString("answer");
 
 				//				取得したデータでインスタンスを作成、リストに追加
-				Quiz quiz = new Quiz(id, text, answer);
+				Quiz quiz = new Quiz(id, text, select, answer);
 				list.add(quiz);
 			}
 
@@ -42,9 +43,10 @@ public class QuizDAO extends DAO {
 		try {
 			this.connect();
 
-			stmt = con.prepareStatement("INSERT INTO quiz(text,answer) VALUES(?,?)");
+			stmt = con.prepareStatement("INSERT INTO quiz(text,`select`,answer) VALUES(?,?,?)");
 			stmt.setString(1, quiz.getText());
-			stmt.setString(2, quiz.getAnswer());
+			stmt.setString(2, quiz.getSelect());
+			stmt.setString(3, quiz.getAnswer());
 			stmt.execute();
 
 		} catch (NamingException | SQLException e) {
@@ -66,10 +68,11 @@ public class QuizDAO extends DAO {
 					//				レコードから各カラムのデータを取得
 					int id = rs.getInt("id");
 					String text = rs.getString("text");
+					String select = rs.getString("select");
 					String answer = rs.getString("answer");
 
 					//				取得したデータでインスタンスを作成、リストに追加
-					Quiz quiz = new Quiz(id, text, answer);
+					Quiz quiz = new Quiz(id, text, select, answer);
 					list.add(quiz);
 				}
 
