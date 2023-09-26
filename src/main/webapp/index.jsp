@@ -13,8 +13,8 @@
             名前：<input type="text" name="name">
             <input type="submit" value="遊ぶ"><br><br>
         </form>
-        <a href="Rank">ランキング</a><br><br>
-        <a href="Make">問題作り</a><br><br>
+        <a href="Rank"><button>ランキング</button></a><br><br>
+        <a href="Make"><button>問題作り</button></a><br><br>
     </body>
 
     </html>
