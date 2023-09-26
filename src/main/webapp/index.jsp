@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <img  src="images/title.jpg" id="title">
+        <img  src="images/title.jpg" class="title">
         <form action="Play" method="post">
             名前：<input type="text" name="name">
             <input type="submit" value="遊ぶ"><br><br>

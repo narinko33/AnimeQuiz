@@ -9,8 +9,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/index.css">
 </head>
-<body>
+<body style="background: linear-gradient(to right,#c70000,#d28300,#dfd000,#00873c,#005aa0,#181878,#800073)">
 <h1>＜＜＜＜成績発表＞＞＞＞</h1>
 名前:<%=ranking.getName() %><br>
 遊んだ日:<%=ranking.getUpdated() %><br>

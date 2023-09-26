@@ -34,8 +34,6 @@ public class Make extends HttpServlet {
 		String select = request.getParameter("select");
 		String answer = request.getParameter("answer");
 		QuizDAO dao = new QuizDAO();
-		
-		System.out.println(select);
 
 		if (text != null && text.length() != 0 && answer != null && answer.length() != 0) {
 			text = text.replaceAll("\n", "<br>");

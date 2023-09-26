@@ -15,15 +15,22 @@
 </head>
 <body>
 <h1>問題作成</h1>
+<h2>*注意*<br>
+作成の際、選択肢は3つ以外にはしないこと。<br>
+</h2>
 <form action="Make" method="post">
 問題文:<br>
-<textarea name="text" rows="4" cols="20"></textarea><br><br>
+<textarea name="text" rows="8" cols="40"></textarea><br><br>
 選択肢：<br>
 <textarea name="select" rows="4" cols="40" >1  
 2  
 3  </textarea><br><br>
 答え:<br>
-<input type="text" name="answer"><br>
+<select name="answer">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
 <input type="submit" value="登録" ><br>
 </form>
 <% if(errorMsg != null) { %>
